@@ -156,7 +156,6 @@ impl<'a> SharedLibraryTrait for SharedLibrary<'a> {
 
     #[inline]
     fn virtual_memory_bias(&self) -> Bias {
-        assert!((self.addr as usize) < (isize::MAX as usize));
         Bias(self.addr as usize as isize)
     }
 
